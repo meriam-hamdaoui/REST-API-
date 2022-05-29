@@ -22,12 +22,15 @@ export const updateContact = async (id, value) => {
 };
 
 //get by id
-export const getUnique = async (_id, value) => {
+// export const getUnique = async (id) => {
+//   const { data } = await axios.get(`http://localhost:5000/api/phonebook/${id}`);
+//   return data;
+// };
+export const GetUniqueContact = async (id, value) => {
   const { data } = await axios.get(
-    `http://localhost:5000/api/phonebook/${_id}`,
+    `http://localhost:5000/api/phonebook/${id}`,
     value
   );
-
   return data;
 };
 

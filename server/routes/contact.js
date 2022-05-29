@@ -4,7 +4,7 @@ const {
   createContact,
   updateContact,
   removeContact,
-  getById,
+  getContactByid,
 } = require("../controllers/contact");
 const contactRouter = express.Router();
 
@@ -15,7 +15,7 @@ contactRouter.get("/", readContact);
 contactRouter.post("/", createContact);
 
 //getById
-contactRouter.get("/:id", getById);
+contactRouter.get("/:id", getContactByid);
 
 //put
 contactRouter.put("/:id", updateContact);

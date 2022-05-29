@@ -10,22 +10,22 @@ exports.readContact = async (req, res) => {
   }
 };
 
-exports.getById = async (req, res) => {
+exports.getContactByid = async (req, res) => {
   const { id } = req.params;
   try {
     const getContact = await Contact.findById(id);
-    // console.log(getOneContact);
+    console.log(getContact);
     res.status(200).send({ getContact });
   } catch (error) {
-    console.error("OUPS getById => " + error);
+    console.error("OUPS getContactById => " + error);
     res.status(500).send("we couldn't read your one contact");
   }
 };
 
 exports.createContact = async (req, res) => {
   try {
-    const newContact = new Contact(req.body);
-    await newContact.save();
+    const newContact = await new Contact(req.body).save();
+
     res.status(200).send({ msg: "you added a new contact ", newContact });
   } catch (error) {
     console.error("OUPS createContact => " + error);

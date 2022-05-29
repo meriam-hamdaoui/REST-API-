@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { updateContact, getUnique } from "../api/contact";
-console.log("getUnique => " + getUnique());
+import { updateContact, GetUniqueContact } from "../api/contact";
 
 const Update = () => {
   const { id } = useParams();
@@ -13,21 +12,26 @@ const Update = () => {
   const [email, setEmail] = useState("");
 
   //get unique to set values inside our update inputs
-  const getContactById = async (idCont) => {
-    try {
-      const data = await getUnique(idCont);
-      console.log("getUnique data => " + data);
-    } catch (error) {
-      console.error(error);
-    }
+  // const getContactById = async (contactId) => {
+  //   const data = await getUnique(contactId);
+  //   console.log("getUnique data => " + data);
+  //   // setName(data.getContact.name);
+  //   // setPhone(data.getContact.phone);
+  //   // setEmail(data.getContact.email);
+  // };
 
-    // setName(data.getContact.name);
-    // setPhone(data.getContact.phone);
-    // setEmail(data.getContact.email);
+  const getContactbyId = async (contactId) => {
+    const data = await GetUniqueContact(contactId);
+    console.log("datagetunique", data);
+    setEmail(data.getContact.email);
+    setPhone(data.getContact.phone);
+    setName(data.getContact.name);
   };
 
   useEffect(() => {
-    id && getContactById(id);
+    if (id) {
+      getContactbyId(id);
+    }
     // console.log("useeffect id =>" + id);
   }, [id]);
 
@@ -43,29 +47,29 @@ const Update = () => {
         <div className="form-group">
           <label>name :</label>
           <input
-            onChange={(e) => setName(e.target.value)}
             className="form-control"
             type="text"
+            name="name"
             value={name}
-            placeholder="John Doe"
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className="form-group">
           <label>Phone</label>
           <input
-            onChange={(e) => setPhone(e.target.value)}
             className="form-control"
+            name="phone"
             value={phone}
-            placeholder="+xxx xx-xxx-xxx"
+            onChange={(e) => setPhone(e.target.value)}
           />
         </div>
         <div className="form-group">
           <label>email</label>
           <input
-            onChange={(e) => setEmail(e.target.value)}
             className="form-control"
+            name="email"
             value={email}
-            placeholder="john@example.com"
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <button
