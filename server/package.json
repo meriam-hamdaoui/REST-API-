@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "create a phonebook app server/client MERN",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "HAMDAOUI Mariem",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.2.1",
+    "config": "^3.3.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.4",
+    "nodemon": "^2.0.16"
+  }
+}

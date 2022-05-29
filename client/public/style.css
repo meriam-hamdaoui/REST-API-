@@ -1,0 +1,79 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #dfe6e9;
+  text-align: center;
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 0 auto;
+  padding: 25px;
+}
+.add {
+  width: 50%;
+  margin: 5% auto;
+}
+.card {
+  border-radius: 25px;
+  position: relative;
+  padding: 25px 15px;
+  background-color: #81ecec;
+  margin: 50px 0;
+  height: 200px;
+  box-shadow: 0 2px 5px #ccc;
+  text-align: left;
+}
+
+.top {
+  border-radius: 25px 25px 0 0;
+  height: 100px;
+  width: 100%;
+  background-color: #4570d6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+.name {
+  font-size: 2em;
+  color: #2d3436;
+  display: flex;
+  flex: 1;
+  margin: 10% 20px 0;
+}
+
+.card img {
+  margin: 30px 20px 0 0;
+}
+
+.circle-img {
+  margin-top: 0;
+  border-radius: 50%;
+  border: 7px solid #fff;
+  width: 120px;
+  height: 120px;
+}
+button {
+  background-color: transparent;
+  border: 0;
+}
+.bottom {
+  margin-top: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info {
+  margin: 20px 0;
+  color: #1a7e76;
+}
+.delete-btn {
+  height: 25%;
+  margin-left: 30%;
+}
+.top-card {
+  display: flex;
+  justify-content: space-between;
+}
